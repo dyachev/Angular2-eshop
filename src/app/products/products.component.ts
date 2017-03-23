@@ -23,15 +23,7 @@ export class ProductsComponent implements OnInit {
     this.productService.getProducts().subscribe((res) => this.products = res);
   }
 
-  openDialog() {
-    this.editorDialog.open = true;
-  }
-
-  closeDialog() {
-    this.editorDialog.open = false;
-  }
-
   add() {
-    this.products.unshift(new Product({edit_mode: true}));
+    this.products.unshift(new Product({mode: 'add'}));
   };
 }
