@@ -1,0 +1,44 @@
+ <article class="product-card inStoke">
+    <header>
+      {{product.edit_mode}}
+      <h1>{{product.brand}} {{product.model}}</h1>
+      <div class="product-actions">
+        <a href="#">edit</a>
+        <a href="#">delete</a>
+      </div>
+    </header>
+    <figure>
+      
+      <img src="{{product.img}}" alt="{{product.brand}} {{product.model}}" height="200" />
+    </figure>
+    <table class="product-data">
+        <thead>
+          <tr>
+            <th colspan="2">Eigenschapp en</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OS / versie</td>
+            <td>{{product.OS}} {{product.OS_version}}</td>
+          </tr>
+          <tr>
+            <td>Schermgrootte</td>
+            <td>{{product.display}} inch</td>
+          </tr>
+          <tr>
+            <td>Geheugenopslag</td>
+            <td>{{product.internal_memory}}</td>
+          </tr>
+          <tr>
+            <td>Dual Sim</td>
+            <td>{{product.dual_sim}}</td>
+          </tr>
+        </tbody>
+        
+    </table>
+    <div>
+      <span class="date"></span>
+      <span class="date"></span>
+    </div>
+  </article>

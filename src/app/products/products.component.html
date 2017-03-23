@@ -1,0 +1,86 @@
+<div class="products-list">
+  <div>
+    <a href="#" (click)="add(); false">Add new product +</a>
+  </div>
+
+  <!--<div *ngFor="let product of products | async" (click)="onSelect(product)">
+    [ngClass]="{'open':dialogEditor.open}"
+    - {{product.brand}}
+  </div>-->
+  <app-product *ngFor="let product of products" [product]="product"></app-product>
+</div>
+
+<!--<div class="editor-panel"   [ngClass]="{'open': editorDialog.open}">
+  <header class="editor-panel-header">
+    <a href="#" (click)="closeDialog(); false">Close</a>
+  </header>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+ 
+      <div class="field">  
+        <label for="brand">Brand:</label>  
+        <input type="text"  
+               placeholder="brand" 
+               name="brand" ngModel />  
+      </div>
+
+      <div class="field">  
+        <label for="model">Model:</label>  
+        <input type="text"  
+               placeholder="model" 
+               name="model" ngModel />  
+      </div>
+
+      <div class="field">  
+        <label for="model">Image:</label>  
+        <input type="text"  
+               placeholder="url" 
+               name="img" ngModel />  
+      </div>
+
+      <div class="field">  
+        <label for="OS">OS:</label>  
+        <input type="text"  
+               placeholder="OS" 
+               name="OS" ngModel />  
+      </div>
+      <div class="field">  
+        <label for="OS_version">OS version:</label>  
+        <input type="text"  
+               placeholder="OS_version" 
+               name="OS_version" ngModel />  
+      </div>
+
+      <div class="field">  
+        <label for="display">Display:</label>  
+        <input type="text"  
+               placeholder="display" 
+               name="display" ngModel>  
+      </div>
+
+      <div class="field">  
+        <label for="RAM">RAM:</label>  
+        <input type="number"  
+               placeholder="RAM" 
+               name="RAM" ngModel>  
+      </div>
+      <div class="field">  
+        <label for="internal_memory">internal memory:</label>  
+        <input type="number"  
+               placeholder="internal_memory" 
+               name="internal_memory" ngModel>  
+      </div>
+      <div class="field">  
+        <label for="dual_sim">dual sim:</label>  
+        <input type="checkbox"  
+               placeholder="dual_sim" 
+               name="dual_sim" ngModel>  
+      </div>
+      <div class="field">  
+        <label for="inStoke">in stoke:</label>  
+        <input type="checkbox"  
+               placeholder="inStoke" 
+               name="inStoke" ngModel>  
+      </div>
+      <button type="submit" >Save</button>
+  </form> 
+</div>-->

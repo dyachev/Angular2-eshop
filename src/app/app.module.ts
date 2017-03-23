@@ -5,14 +5,16 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TabsComponent } from './tabs/tabs.component';
-import { ProductsListComponent } from './products-list/products-list.component';
-import { ProductComponent } from './product/product.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './products/product/product.component';
+
+import { ProductService } from './shared/product.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabsComponent,
-    ProductsListComponent,
+    ProductsComponent,
     ProductComponent
   ],
   imports: [
@@ -20,7 +22,7 @@ import { ProductComponent } from './product/product.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

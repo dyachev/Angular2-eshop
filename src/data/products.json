@@ -1,0 +1,26 @@
+[
+    {
+        "brand":"Sony",
+        "model":"Z5",
+        "img": "http://smb.optus.com.au/opfiles/Shop/Consumer/Assets/Images/responsive-product-page/Sony/xperia-z5premium-chrome.png",
+        "OS":"Android",
+        "OS_version":"7.0.0",
+        "display":"5.2",
+        "RAM": 3,
+        "internal_memory": 32,
+        "dual_sim": false ,
+        "inStoke": true
+    },
+    {
+        "brand":"Samsung ",
+        "model":"Galaxy S7",
+        "img": "http://smb.optus.com.au/opfiles/Shop/Consumer/Assets/Images/responsive-product-page/Samsung/galaxy-s7-black.png",
+        "OS":"Android",
+        "OS_version":"6.1.0",
+        "display":"5.0",
+        "RAM": 2,
+        "internal_memory": 16,
+        "dual_sim": true ,
+        "inStoke": false
+    }
+]
