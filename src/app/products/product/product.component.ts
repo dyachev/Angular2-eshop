@@ -10,7 +10,8 @@ export class ProductComponent implements OnInit {
   @Input()
   product: Product;
 
-  @Output() openModaleven = new EventEmitter();
+  @Output() openModalEven = new EventEmitter();
+  @Output() deleteItemEvent = new EventEmitter();
 
   constructor() {}
   ngOnInit() {}
@@ -18,7 +19,14 @@ export class ProductComponent implements OnInit {
 
   openModal() {
     console.log('product', this.product);
-    this.openModaleven.emit(this.product);
+    this.openModalEven.emit(this.product);
+  }
+
+
+
+
+  deleteProduct() {
+     this.deleteItemEvent.emit(this.product);
   }
 
 }

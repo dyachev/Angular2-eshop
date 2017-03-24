@@ -1,23 +1,68 @@
 <div class="products-list">
   <div>
-    <a href="#" (click)="openModal(); false">Add new product +</a>
+    <a href="#" (click)="openModal({}); false;">Add new product +</a>
   </div>
-  <div class="modal open" [ngClass]="{'open': modalOpen}">
+  <div class="modal open" *ngIf="modalOpen">
     <header class="modal-header">
       <h1>{{modalTitle}}</h1>
+      <a href="#" (click)="closeModal(); false;">Close</a>
     </header>
     <div class="modal-body">
-      <!--<form novalidate (ngSubmit)="onSubmit()" [formGroup]="form">
-        <div class="field">  
-          <label for="brand">Brand:</label>  
-          <input type="text" class="input" formControlName="brand">
+      <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value); false;">
 
-          <button type="submit" >Save</button>
+        <div class="field">
+          <label for="brand">Brand:</label>
+          <input type="text" required placeholder="brand" name="brand" [(ngModel)]="modalProduct.brand" />
         </div>
-      </form>-->
+
+        <div class="field">
+          <label for="model">Model:</label>
+          <input type="text" required placeholder="model" name="model" [(ngModel)]="modalProduct.model" />
+        </div>
+
+        <div class="field">
+          <label for="model">Image:</label>
+          <input type="text" required placeholder="url" name="img" [(ngModel)]="modalProduct.img" />
+          <figure>
+            <img src="{{modalProduct.img}}" alt="{{modalProduct.brand}} {{modalProduct.model}}" height="200" />
+          </figure>
+        </div>
+
+        <div class="field">
+          <label for="OS">OS:</label>
+          <input type="text" placeholder="OS" name="OS" [(ngModel)]="modalProduct.OS" />
+        </div>
+        <div class="field">
+          <label for="OS_version">OS version:</label>
+          <input type="text" placeholder="OS_version" name="OS_version" [(ngModel)]="modalProduct.OS_version" />
+        </div>
+
+        <div class="field">
+          <label for="display">Display:</label>
+          <input type="text" placeholder="display" name="display"  [(ngModel)]="modalProduct.display">
+        </div>
+
+        <div class="field">
+          <label for="RAM">RAM:</label>
+          <input type="number" placeholder="RAM" name="RAM"  [(ngModel)]="modalProduct.RAM">
+        </div>
+        <div class="field">
+          <label for="internal_memory">internal memory:</label>
+          <input type="number" placeholder="internal_memory" name="internal_memory"  [(ngModel)]="modalProduct.internal_memory">
+        </div>
+        <div class="field">
+          <label for="dual_sim">dual sim:</label>
+          <input type="checkbox" placeholder="dual_sim" name="dual_sim" [(ngModel)]="modalProduct.dual_sim">
+        </div>
+        <div class="field">
+          <label for="inStoke">in stoke:</label>
+          <input type="checkbox" placeholder="inStoke" name="inStoke" [(ngModel)]="modalProduct.inStoke">
+        </div>
+        <button type="submit">Save</button>
+      </form>
     </div>
   </div>
-  <app-product *ngFor="let product of products" [product]="product" (openModaleven)="openModal($event)"></app-product>
+  <app-product *ngFor="let product of products" [product]="product" (openModalEven)="openModal($event)" (deleteItemEvent)="deleteItem($event)"></app-product>
 </div>
 
 <!--<div class="editor-panel"   [ngClass]="{'open': editorDialog.open}">
@@ -94,4 +139,3 @@
       <button type="submit" >Save</button>
   </form> 
 </div>-->
-

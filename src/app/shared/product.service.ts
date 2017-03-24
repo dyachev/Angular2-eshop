@@ -17,16 +17,4 @@ export class ProductService {
       .map(res => res.json());
   }
 
-  addProduct(data): Product {
-    return new Product(data);
-  }
-
-  saveProduct(product: Product): void {
-    console.log('SAVE Product', product);
-  }
-
-  deleteProduct(product: Product): void {
-
-  }
-
 }

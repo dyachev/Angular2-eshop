@@ -11,7 +11,6 @@ export class Product {
   internal_memory: number;
   dual_sim: boolean;
   inStoke: boolean;
-  // mode: productMode;
 
   constructor() {
     // this.brand = data.brand;
@@ -24,7 +23,6 @@ export class Product {
     // this.internal_memory = data.internal_memory;
     // this.dual_sim = data.dual_sim;
     // this.inStoke = data.inStoke;
-    // this.mode = data.mode;
   }
 }
 

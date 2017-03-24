@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product/product';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from './../shared/product.service';
 
 @Component({
@@ -14,29 +13,40 @@ export class ProductsComponent implements OnInit {
   modalOpen: boolean;
   modalProduct: Product;
   modalTitle: string;
-  form: FormGroup;
-  constructor(private productService: ProductService, public fb: FormBuilder) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
     this.productService.getProducts().subscribe((res) => this.products = res);
     this.modalOpen = false;
-    
+    this.modalProduct = new Product();
     this.modalTitle = 'Create New product';
   }
 
   openModal(product: Product) {
-    console.log('event', typeof(product));
+    console.log('event', this.modalOpen);
+    if (this.modalOpen) {
+      this.closeModal();
+    }
+
     this.modalOpen = true;
-    this.modalProduct = product ? product : new Product();
+    this.modalProduct = product;
     this.modalTitle =  product ? 'Edit product' : 'Create New product';
   }
 
-
-  onSubmit() {
-    
+  closeModal(){
+    this.modalOpen = false;
   }
 
-  // add() {
-  //   this.products.unshift(new Product({mode: 'add'}));
-  // };
+
+  deleteItem(product: Product) {
+    const index = this.products.indexOf(product);
+    this.products.splice(index, 1);
+  }
+
+
+  onSubmit(values) {
+    this.products.push(values);
+  }
+
+
 }
