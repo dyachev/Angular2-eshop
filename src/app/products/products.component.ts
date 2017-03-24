@@ -13,23 +13,29 @@ export class ProductsComponent implements OnInit {
   modalOpen: boolean;
   modalProduct: Product;
   modalTitle: string;
+  modalMode: string;
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
     this.productService.getProducts().subscribe((res) => this.products = res);
     this.modalOpen = false;
-    this.modalProduct = new Product();
     this.modalTitle = 'Create New product';
   }
 
   openModal(product: Product) {
-    console.log('event', this.modalOpen);
     if (this.modalOpen) {
       this.closeModal();
     }
 
     this.modalOpen = true;
-    this.modalProduct = product;
+
+    if (typeof(product) !== 'undefined'){
+      this.modalProduct = product;
+      this.modalMode = 'edit';
+    } else {
+      this.modalProduct = new Product();
+      this.modalMode = 'add';
+    }
     this.modalTitle =  product ? 'Edit product' : 'Create New product';
   }
 
@@ -46,7 +52,6 @@ export class ProductsComponent implements OnInit {
 
   onSubmit(values) {
     this.products.push(values);
+    this.closeModal();
   }
-
-
 }

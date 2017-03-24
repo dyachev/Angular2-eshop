@@ -1,6 +1,6 @@
 <div class="products-list">
   <div>
-    <a href="#" (click)="openModal({}); false;">Add new product +</a>
+    <a href="#" (click)="openModal(); false;">Add new product +</a>
   </div>
   <div class="modal open" *ngIf="modalOpen">
     <header class="modal-header">
@@ -58,84 +58,10 @@
           <label for="inStoke">in stoke:</label>
           <input type="checkbox" placeholder="inStoke" name="inStoke" [(ngModel)]="modalProduct.inStoke">
         </div>
-        <button type="submit">Save</button>
+        <button type="submit" *ngIf="modalMode==='add'" >Save</button>
+        <button type="button" *ngIf="modalMode==='edit'" (click)="closeModal()">Edit</button>
       </form>
     </div>
   </div>
   <app-product *ngFor="let product of products" [product]="product" (openModalEven)="openModal($event)" (deleteItemEvent)="deleteItem($event)"></app-product>
 </div>
-
-<!--<div class="editor-panel"   [ngClass]="{'open': editorDialog.open}">
-  <header class="editor-panel-header">
-    <a href="#" (click)="closeDialog(); false">Close</a>
-  </header>
-  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
- 
-      <div class="field">  
-        <label for="brand">Brand:</label>  
-        <input type="text"  
-               placeholder="brand" 
-               name="brand" ngModel />  
-      </div>
-
-      <div class="field">  
-        <label for="model">Model:</label>  
-        <input type="text"  
-               placeholder="model" 
-               name="model" ngModel />  
-      </div>
-
-      <div class="field">  
-        <label for="model">Image:</label>  
-        <input type="text"  
-               placeholder="url" 
-               name="img" ngModel />  
-      </div>
-
-      <div class="field">  
-        <label for="OS">OS:</label>  
-        <input type="text"  
-               placeholder="OS" 
-               name="OS" ngModel />  
-      </div>
-      <div class="field">  
-        <label for="OS_version">OS version:</label>  
-        <input type="text"  
-               placeholder="OS_version" 
-               name="OS_version" ngModel />  
-      </div>
-
-      <div class="field">  
-        <label for="display">Display:</label>  
-        <input type="text"  
-               placeholder="display" 
-               name="display" ngModel>  
-      </div>
-
-      <div class="field">  
-        <label for="RAM">RAM:</label>  
-        <input type="number"  
-               placeholder="RAM" 
-               name="RAM" ngModel>  
-      </div>
-      <div class="field">  
-        <label for="internal_memory">internal memory:</label>  
-        <input type="number"  
-               placeholder="internal_memory" 
-               name="internal_memory" ngModel>  
-      </div>
-      <div class="field">  
-        <label for="dual_sim">dual sim:</label>  
-        <input type="checkbox"  
-               placeholder="dual_sim" 
-               name="dual_sim" ngModel>  
-      </div>
-      <div class="field">  
-        <label for="inStoke">in stoke:</label>  
-        <input type="checkbox"  
-               placeholder="inStoke" 
-               name="inStoke" ngModel>  
-      </div>
-      <button type="submit" >Save</button>
-  </form> 
-</div>-->
