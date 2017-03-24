@@ -1,0 +1,25 @@
+.product-card{
+    float: left;
+    width: 46%;
+    margin: 1% 2%;
+    padding: 10px;
+    border: #ebebeb;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    header{
+
+    }
+
+    .product-actions{
+        text-align: right;
+        a{
+            display: inline-block;
+            vertical-align: top;
+            padding: 5px;
+            margin-left: 4px;
+            font-size: 12px;
+            color: #666;
+        }
+    }
+}

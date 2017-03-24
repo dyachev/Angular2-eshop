@@ -52,6 +52,24 @@
     }
 
     .tabs-holder{
+        max-width: 1200px;
+        margin: auto;
+        padding: 30px 0;
 
+        .tab{
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        .groups{
+            width: 250px;
+             display: table-cell;
+             border-right: 1px solid #bebebe;
+        }
+
+        .tab-content{
+            display: table-cell;
+            padding: 0 20px;
+        }
     }
 }
