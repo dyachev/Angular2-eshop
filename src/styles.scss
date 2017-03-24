@@ -1,9 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+$color_1: #fff;
+$color_2: #5c5c5c;
+
+$base_font_size: 16px;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
 body{
-    background: #f1f1f1;
-    color: #5c5c5c;
-    .wrapper{
-        max-width: 1200px;
-        margin: auto;
+    background: $color_1;
+    color: $color_2;
+    font-family: 'Roboto Slab', serif;
+    font-size: $base_font_size;
+}
+
+h1{
+    font-size: 3em;
+}
+h2{
+    font-size: 2.5em;
+}
+h3{
+    font-size: 2em
+}
+h4{
+
+    font-size: 1.3em;
+}
+
+a{
+    text-decoration: none;
+}
+
+.page-header{
+    text-align: center;
+    position: relative;
+
+    h1{
+        font-weight: normal;
+    }
+
+    h2{
+
+    }
+
+    .brand{
+        position: absolute;
+        
+        height: 100%;
+        left: 0;
+        top:0;
+        img{
+            width: auto;
+            height: 100%;
+            display: inline-block;
+            vertical-align: top;
+
+        }
     }
 }
+
+
+.content{
+    margin: 40px 0 0 0;
+}
+
+
+
+
+
