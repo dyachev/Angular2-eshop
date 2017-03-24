@@ -1,13 +1,23 @@
 <div class="products-list">
   <div>
-    <a href="#" (click)="add(); false">Add new product +</a>
+    <a href="#" (click)="openModal(); false">Add new product +</a>
   </div>
+  <div class="modal open" [ngClass]="{'open': modalOpen}">
+    <header class="modal-header">
+      <h1>{{modalTitle}}</h1>
+    </header>
+    <div class="modal-body">
+      <!--<form novalidate (ngSubmit)="onSubmit()" [formGroup]="form">
+        <div class="field">  
+          <label for="brand">Brand:</label>  
+          <input type="text" class="input" formControlName="brand">
 
-  <!--<div *ngFor="let product of products | async" (click)="onSelect(product)">
-    [ngClass]="{'open':dialogEditor.open}"
-    - {{product.brand}}
-  </div>-->
-  <app-product *ngFor="let product of products" [product]="product"></app-product>
+          <button type="submit" >Save</button>
+        </div>
+      </form>-->
+    </div>
+  </div>
+  <app-product *ngFor="let product of products" [product]="product" (openModaleven)="openModal($event)"></app-product>
 </div>
 
 <!--<div class="editor-panel"   [ngClass]="{'open': editorDialog.open}">
@@ -84,3 +94,4 @@
       <button type="submit" >Save</button>
   </form> 
 </div>-->
+

@@ -1,12 +1,11 @@
  <article class="product-card inStoke">
-   <div class="view-mode" *ngIf="product.mode != 'edit' && product.mode != 'add'">
+   
     <header>
-      {{product.edit_mode}}
       <h1>{{product.brand}} {{product.model}}</h1>
       
 
       <div class="product-actions">
-        <a href="#">edit</a>
+        <a href="#" (click)="openModal(); false">edit</a>
         <a href="#">delete</a>
       </div>
     </header>
@@ -42,76 +41,5 @@
     <div>
       <span class="date"></span>
       <span class="date"></span>
-    </div>
-   </div>
-
-   <div class="edit-mode" *ngIf="product.mode == 'edit' || product.mode == 'add'">
-      <header>
-        <label for="brand">brand:</label>
-        <input [value]="product.brand"  name="brand" />
-        <label for="brand">model:</label>
-        <input [value]="product.model"  name="model" />
-
-        <div class="product-actions">
-          <a href="#">clear</a>
-        </div>
-      </header>
-      <figure>
-        <img src="{{product.img}}" alt="{{product.brand}} {{product.model}}" height="200" />
-        <br />
-        <label for="img">img:</label>
-        <input [value]="product.img" (change)="product.img = $event.target.value"  name="img" />
-      </figure>
-      <!--<table class="product-data">
-        <thead>
-          <tr>
-            <th colspan="2">Eigenschapp en</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>OS / versie</td>
-            <td>
-              <label for="img">OS:</label>
-              <input [value]="product.OS"  name="OS" />
-              /
-              <label for="OS_version">OS:</label> 
-              <input [value]="product.OS_version"  name="OS_version" />
-            </td>
-          </tr>
-          <tr>
-            <td>Schermgrootte</td>
-            <td>
-              <label for="dispaly">dispaly:</label> 
-              <input [value]="product.dispaly"  name="dispaly" />  inch</td>
-          </tr>
-          <tr>
-            <td>Geheugenopslag</td>
-            <td>
-              <label for="internal_memory">internal_memory:</label> 
-              <input [value]="product.internal_memory"  name="internal_memory" />
-            </td>
-          </tr>
-          <tr>
-            <td>Dual Sim</td>
-            <td>
-              <label for="dual_sim">dual_sim:</label> 
-              <input type="checkbox" [value]="product.dual_sim"  name="dual_sim" />
-            </td>
-          </tr>
-          <tr>
-            <td>In Stoke</td>
-            <td>
-              <label for="inStoke">inStoke:</label> 
-              <input type="checkbox" [value]="product.inStoke"  name="inStoke" />
-            </td>
-          </tr>
-        </tbody>
-        
-      </table>
-      <div>
-        <span class="date"></span>
-        <span class="date"></span>
-      </div>-->
     </div>
   </article>

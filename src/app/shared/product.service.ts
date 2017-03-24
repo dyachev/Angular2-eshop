@@ -8,6 +8,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ProductService {
 
+  products: Product[];
+
   constructor(private http: Http) { }
 
   getProducts(): Observable<Product[]> {
@@ -17,6 +19,14 @@ export class ProductService {
 
   addProduct(data): Product {
     return new Product(data);
+  }
+
+  saveProduct(product: Product): void {
+    console.log('SAVE Product', product);
+  }
+
+  deleteProduct(product: Product): void {
+
   }
 
 }

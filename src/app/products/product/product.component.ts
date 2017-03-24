@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit , Output, EventEmitter} from '@angular/core';
 import { Product } from './product';
 
 @Component({
@@ -7,27 +7,18 @@ import { Product } from './product';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-    @Input()
-    product: Product[];
-    // constructor(product: Product[]) {
-    //   this.product = product;
-    // }
+  @Input()
+  product: Product;
 
-  constructor(){}
-  ngOnInit() {
+  @Output() openModaleven = new EventEmitter();
 
-  }
+  constructor() {}
+  ngOnInit() {}
 
-  edit(){
-    console.log('Edit');
-  }
 
-  delete(){
-    console.log('Delete');
-  }
-
-  add(){
-    console.log('Add');
+  openModal() {
+    console.log('product', this.product);
+    this.openModaleven.emit(this.product);
   }
 
 }

@@ -1,5 +1,5 @@
 
-enum productMode {'add', 'edit', 'view'}
+// enum productMode {'add', 'edit', 'view'}
 export class Product {
   brand: string;
   model: string;
@@ -11,20 +11,20 @@ export class Product {
   internal_memory: number;
   dual_sim: boolean;
   inStoke: boolean;
-  mode: productMode;
+  // mode: productMode;
 
-  constructor(data) {
-    this.brand = data.brand;
-    this.model = data.model;
-    this.img = data.img;
-    this.OS = data.OS;
-    this.OS_version = data.OS_version;
-    this.display = data.display;
-    this.RAM = data.RAM;
-    this.internal_memory = data.internal_memory;
-    this.dual_sim = data.dual_sim;
-    this.inStoke = data.inStoke;
-    this.mode = data.mode;
+  constructor() {
+    // this.brand = data.brand;
+    // this.model = data.model;
+    // this.img = data.img;
+    // this.OS = data.OS;
+    // this.OS_version = data.OS_version;
+    // this.display = data.display;
+    // this.RAM = data.RAM;
+    // this.internal_memory = data.internal_memory;
+    // this.dual_sim = data.dual_sim;
+    // this.inStoke = data.inStoke;
+    // this.mode = data.mode;
   }
 }
 
